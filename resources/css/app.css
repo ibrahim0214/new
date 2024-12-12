@@ -1,0 +1,121 @@
+/* @import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+@import '@fontsource/poppins/900.css'; */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table-hover{
+    @apply w-full;
+}
+
+.table-hover > thead {
+    @apply text-sm bg-gray-100 dark:bg-gray-900;
+}
+
+.table-hover th {
+    @apply text-center border-y border-gray-100 px-4 py-1;
+}
+
+.table-hover > tbody > tr {
+    @apply hover:bg-gray-200 dark:hover:bg-gray-500;
+}
+.table-hover > tbody > tr > td {
+    @apply border-y border-gray-200 px-4 py-1
+}
+
+.active{
+    @apply bg-gray-200;
+}
+
+.table-striped{
+    @apply w-full;
+}
+
+.table-striped > thead {
+    @apply text-sm bg-gray-100 dark:bg-gray-900;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {
+    @apply bg-gray-200 dark:bg-gray-500
+}
+
+.table-striped > tbody > tr > td {
+    @apply border-y border-gray-200 px-4 py-1 align-top
+}
+
+/* Table bordered */
+.table-bordered{
+    @apply w-full;
+}
+
+.table-bordered > thead {
+    @apply text-sm bg-gray-200 dark:bg-gray-900 h-12;
+}
+
+.table-bordered > thead > tr > th {
+    @apply border border-gray-500;
+}
+
+.table-bordered > tbody > tr > td {
+    @apply border border-gray-600 px-4 py-1 align-top
+}
+
+.select2-container--default .select2-selection--single{
+    padding:6px;
+    height: 50px;
+    position: relative;
+    border: 1px solid #d1d1d1 ;
+    border-radius: 8px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.customSelect{
+    /* background-color: #ffffff;
+    color: #424141;
+    position: absolute;
+    z-index: 999;
+    border-radius: 7px;
+    top: 48px;
+    width: 100%; */
+    @apply absolute z-10 w-7/12 rounded-lg bg-white text-gray-600
+}
+.customOption{
+    /* width: 100%;
+    border: 1px solid #dcdcdc;
+    padding: 10px; */
+    @apply w-7/12 border border-gray-200 p-3
+}
+.customOption:hover{
+    /* cursor: pointer;
+    background: #d8d8d8 */
+    @apply bg-gray-300 cursor-pointer
+}
+
+.active{
+    background: #d8d8d8;
+    @apply bg-gray-300
+}
+
+/* .options {
+    font: 'Be Vietnam Pro' !important;
+    font-size: 18pt !important;
+} */
+
+.select2-container .select2-choice {
+    height: 134px !important;
+    width: 100% !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-color: #fff;
+    background-image: none;
+    background: #fff;
+}
+
