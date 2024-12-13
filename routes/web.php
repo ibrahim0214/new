@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/stations/selected', [StationController::class, 'showSelected'])->name('stations.selected');
     // Route::get('/update-station', UpdateStatus::class)->name('update-station');
     // Route::get('/dashboard/osce', [DashboardController::class, 'showDashboard'])->name('dashboard.osce');
-    Route::get('/osce/index', [Index::class, 'showDashboard'])->name('livewire.osce.index');
+    // Route::get('/osce/index', [Index::class, 'showDashboard'])->name('livewire.osce.index');
 });
 
 

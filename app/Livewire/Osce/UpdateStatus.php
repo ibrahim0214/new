@@ -21,7 +21,7 @@ class UpdateStatus extends Component
         $data = Station::whereIn('id', $this->selectedStations)->get();
 
         // Redirect ke halaman dashboard dengan data
-        return redirect()->route('livewire.osce.index', ['selectedStations' => $this->selectedStations]);
+        return redirect()->route('osce', ['selectedStations' => $this->selectedStations]);
     }
 
     public function render()
