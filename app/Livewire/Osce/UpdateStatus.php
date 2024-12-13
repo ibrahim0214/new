@@ -17,11 +17,10 @@ class UpdateStatus extends Component
 
     public function showSelected()
     {
-        // Ambil data berdasarkan ID yang dipilih
-        $data = Station::whereIn('id', $this->selectedStations)->get();
-
-        // Redirect ke halaman dashboard dengan data
-        return redirect()->route('livewire.osce.index', ['selectedStations' => $this->selectedStations]);
+        // ini untuk update jadi show saat checkbox di klik
+        Station::whereIn('id', $this->selectedStations)->update(['status' => 'show']);
+        // nah ini yg ku maksud redirect ke halaman index nya osce
+        return redirect()->route('osce');
     }
 
     public function render()
