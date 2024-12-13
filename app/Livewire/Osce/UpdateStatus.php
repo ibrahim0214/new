@@ -22,6 +22,8 @@ class UpdateStatus extends Component
 
         // Redirect ke halaman dashboard dengan data
         return redirect()->route('osce', ['selectedStations' => $this->selectedStations]);
+    
+    
     }
 
     public function render()

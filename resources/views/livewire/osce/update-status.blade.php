@@ -12,14 +12,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($stations as $station)
+                @foreach ($stations as $station)
                     <tr>
                         <td>
-                            <input 
-                                type="checkbox" 
-                                wire:model="selectedStations" 
-                                value="{{ $station->id }}" 
-                            >
+                            <input type="checkbox" wire:model="selectedStations" value="{{ $station->id }}">
                         </td>
                         <td>{{ $station->nama_station }}</td>
                         <td>{{ $station->judul }}</td>
