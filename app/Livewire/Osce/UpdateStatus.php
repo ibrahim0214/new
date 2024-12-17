@@ -13,17 +13,24 @@ class UpdateStatus extends Component
     public function mount()
     {
         $this->stations = Station::all();
+
+        // Inisialisasi selectedStations berdasarkan status 'show'
+        $this->selectedStations = $this->stations
+            ->where('status', 'show')
+            ->pluck('id')
+            ->toArray();
     }
 
     public function showSelected()
     {
-        // Ambil data berdasarkan ID yang dipilih
-        $data = Station::whereIn('id', $this->selectedStations)->get();
+        // Update semua station yang dipilih ke 'show'
+        Station::whereIn('id', $this->selectedStations)->update(['status' => 'show']);
 
-        // Redirect ke halaman dashboard dengan data
-        return redirect()->route('osce', ['selectedStations' => $this->selectedStations]);
-    
-    
+        // Update semua station yang tidak dipilih ke 'hidden'
+        Station::whereNotIn('id', $this->selectedStations)->update(['status' => 'hidden']);
+
+        // Redirect ke halaman index OSCE
+        return redirect()->route('osce');
     }
 
     public function render()

@@ -31,13 +31,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/setup-user', \App\Livewire\User\Index::class)->name('setup-user')->middleware(AdminMiddleware::class);
     Route::get('/profile', \App\Livewire\Profile\Index::class)->name('profile');
 
-    // Route::get('/paktas', [PaktaController::class, 'index'])->name('paktas.index');
-    // Route::get('/station/update/status', \App\Livewire\Station\UpdateStatus::class,'UpdateStation')->name('update-station');
+    
     Route::get('/station/update/status', UpdateStatus::class)->name('update-station');
     Route::get('/stations/selected', [StationController::class, 'showSelected'])->name('stations.selected');
-    // Route::get('/update-station', UpdateStatus::class)->name('update-station');
-    // Route::get('/dashboard/osce', [DashboardController::class, 'showDashboard'])->name('dashboard.osce');
-    // Route::get('/osce/index', [Index::class, 'showDashboard'])->name('livewire.osce.index');
+    
 });
 
 
