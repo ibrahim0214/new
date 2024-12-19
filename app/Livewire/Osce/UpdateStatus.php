@@ -7,9 +7,9 @@ use Livewire\Component;
 
 class UpdateStatus extends Component
 {
-    public $stations; // Data station
-    public $selectedStations = []; // Data yang dipilih
-
+    public $stations = []; // Data stations
+    public $selectedStations = []; // Data yang dipilih oleh pengguna
+    
     public function mount()
     {
         $this->stations = Station::all();
@@ -22,7 +22,11 @@ class UpdateStatus extends Component
     }
 
     public function showSelected()
-    {
+    {   
+
+         // Debug data selectedStations
+        logger($this->selectedStations); // Periksa di log
+
         // Update semua station yang dipilih ke 'show'
         Station::whereIn('id', $this->selectedStations)->update(['status' => 'show']);
 
@@ -35,8 +39,6 @@ class UpdateStatus extends Component
 
     public function render()
     {
-        return view('livewire.osce.update-status', [
-            'stations' => $this->stations,
-        ]);
+        return view('livewire.osce.update-status', ['stations' => $this->stations]);
     }
 }

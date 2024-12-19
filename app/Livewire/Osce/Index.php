@@ -25,8 +25,11 @@ class Index extends Component
 
     public function UpdateStation()
     {
-        $data = Station::all();
-        return view('livewire.osce.update-status', compact('data'));
+        // Ambil semua data dari tabel stations
+        $stations = Station::all();
+
+        // Redirect ke rute Livewire komponen update-status dengan data stations
+        return redirect()->route('update-station')->with('stations', $stations);
     }
 
     /**

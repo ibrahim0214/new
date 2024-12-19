@@ -35,6 +35,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/station/update/status', UpdateStatus::class)->name('update-station');
     Route::get('/stations/selected', [StationController::class, 'showSelected'])->name('stations.selected');
     
+
+    Route::get('/update-station', [Index::class, 'UpdateStation'])
+    ->middleware('superadmin_or_admin') // Hak akses hanya untuk super admin dan admin
+    ->name('update-station');
+
+    Route::get('/update-station', UpdateStatus::class)
+    ->middleware('superadmin_or_admin') // Middleware untuk hak akses
+    ->name('update-station');
 });
 
 
