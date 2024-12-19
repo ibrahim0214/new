@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('kategori', 2000);
             $table->string('instruksi_penguji', 2000);
             $table->string('instruksi_peserta', 2000);
+            $table->string('status',100);
             $table->timestamps();
         });
     }
